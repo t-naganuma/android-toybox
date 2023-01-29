@@ -35,7 +35,12 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         }
     }
 
-    private fun getUpdatedItemEntity(itemId: Int, itemName: String, itemPrice: String, itemCount: String): Item {
+    private fun getUpdatedItemEntity(
+        itemId: Int,
+        itemName: String,
+        itemPrice: String,
+        itemCount: String
+    ): Item {
         return Item(
             id = itemId,
             itemName = itemName,
@@ -48,7 +53,6 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
         val updatedItem = getUpdatedItemEntity(itemId, itemName, itemPrice, itemCount)
         updateItem(updatedItem)
     }
-
 
 
     fun deleteItem(item: Item) {
